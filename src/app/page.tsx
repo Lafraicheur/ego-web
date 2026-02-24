@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 import { content } from "@/data/content";
 import Hero from "@/slices/Hero";
+import TaxiTransition from "@/slices/TaxiTransition";
 import Features from "@/slices/Features";
 import BigText from "@/slices/BigText";
 import HowItWorks from "@/slices/HowItWorks";
@@ -24,6 +25,7 @@ export default function Index() {
         secondHeading={content.hero.secondHeading}
         secondBody={content.hero.secondBody}
       />
+      <TaxiTransition />
       <Features items={content.features.items} />
       <BigText />
       <HowItWorks steps={content.howItWorks.steps} />
