@@ -81,14 +81,14 @@ const Hero = ({
         )
       gsap.to(".text-side-heading .split-word, .text-side-body .split-word", {
         color: "#0F0F0F",
-        stagger: 0.4,
+        stagger: 0.6,
         ease: "none",
         duration: 0.3,
         scrollTrigger: {
           trigger: ".text-side",
           start: "top center",
-          end: "bottom center",
-          scrub: 2,
+          end: "bottom top",
+          scrub: 3,
         },
       });
     },
