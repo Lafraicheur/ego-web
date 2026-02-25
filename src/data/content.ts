@@ -7,7 +7,7 @@ export const content = {
     buttonLink: "#download",
     secondHeading: "e-Go révolutionne le transport à Abidjan",
     secondBody:
-      "Une application pensée et conçue pour ceux qui conduisent les taxis compteurs et ceux qui les utilisent.",
+      "Une application pensée et conçue pour les conducteurs de taxis compteurs et leurs clients.",
   },
 
   features: {
