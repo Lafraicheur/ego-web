@@ -22,7 +22,7 @@ export function TextSplitter({
     const splitText = word.split("");
     return (
       <span
-        className={clsx("split-word", className, isPreserved && "normal-case")}
+        className={clsx("split-word", className, isPreserved && "normal-case preserved-word")}
         style={{ display: wordDisplayStyle, whiteSpace: "pre" }}
         key={`${wordIndex}-${word}`}
       >

@@ -19,8 +19,21 @@ const HeroText = ({ heading, body }: HeroTextProps): JSX.Element => {
       color: "#D4B0A0",
     });
 
-    gsap.to(".hero-text-heading .split-word, .hero-text-body .split-word", {
+    gsap.to(".hero-text-heading .split-word:not(.preserved-word), .hero-text-body .split-word:not(.preserved-word)", {
       color: "#0F0F0F",
+      stagger: 0.6,
+      ease: "none",
+      duration: 0.3,
+      scrollTrigger: {
+        trigger: ".hero-text-wrapper",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 3,
+      },
+    });
+
+    gsap.to(".hero-text-heading .preserved-word, .hero-text-body .preserved-word", {
+      color: "#FF4C00",
       stagger: 0.6,
       ease: "none",
       duration: 0.3,
