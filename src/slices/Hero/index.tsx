@@ -98,13 +98,6 @@ const Hero = ({
       <div className="grid">
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
-            <h1 className="hero-header text-5xl font-black leading-[.8] text-[#FF4C00] md:text-[9rem] lg:text-[13rem]">
-              <TextSplitter
-                text={heading}
-                wordDisplayStyle="block"
-                className="hero-header-word"
-              />
-            </h1>
             <div className="hero-subheading mt-8 text-2xl font-semibold text-gray-900 md:text-4xl lg:text-6xl">
               <p>{subheading}</p>
             </div>

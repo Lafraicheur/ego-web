@@ -23,6 +23,12 @@ export function Bubbles({
   const minSpeed = speed * 0.001;
   const maxSpeed = speed * 0.005;
 
+  // Cursor tracking
+  const mousePosRef = useRef({ x: 0, y: 0 });
+  const mouseActiveRef = useRef(false);
+  const mouseStrengthRef = useRef(0); // 0 = idle, 1 = cursor actif
+  const mouseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   // Create geometry and material for our mesh
   const geometry = new THREE.SphereGeometry(bubbleSize, 16, 16);
 
@@ -63,6 +69,26 @@ export function Bubbles({
     };
   }, [count, minSpeed, maxSpeed]);
 
+  // Écoute les mouvements du cursor et convertit en coordonnées monde (-4 à 4)
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mousePosRef.current.x = ((e.clientX / window.innerWidth) * 2 - 1) * 4;
+      mousePosRef.current.y = (-(e.clientY / window.innerHeight) * 2 + 1) * 4;
+      mouseActiveRef.current = true;
+
+      if (mouseTimerRef.current) clearTimeout(mouseTimerRef.current);
+      mouseTimerRef.current = setTimeout(() => {
+        mouseActiveRef.current = false;
+      }, 400);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (mouseTimerRef.current) clearTimeout(mouseTimerRef.current);
+    };
+  }, []);
+
   // useFrame runs on every animation frame
   useFrame(() => {
     if (!meshRef.current) {
@@ -72,11 +98,37 @@ export function Bubbles({
     // Assign current body color to bubble so it looks natural
     material.color = new THREE.Color(document.body.style.backgroundColor);
 
+    // Interpolation douce vers 1 (actif) ou 0 (idle)
+    if (mouseActiveRef.current) {
+      mouseStrengthRef.current = Math.min(1, mouseStrengthRef.current + 0.04);
+    } else {
+      mouseStrengthRef.current = Math.max(0, mouseStrengthRef.current - 0.02);
+    }
+
+    const strength = mouseStrengthRef.current;
+
     for (let i = 0; i < count; i++) {
       meshRef.current.getMatrixAt(i, o.matrix);
       o.position.setFromMatrixPosition(o.matrix);
-      // Move bubble upwards by its speed
-      o.position.y += bubbleSpeed.current[i];
+
+      // Remontée normale (réduite progressivement quand cursor actif)
+      o.position.y += bubbleSpeed.current[i] * (1 - strength * 0.8);
+
+      // Attraction vers le cursor
+      if (strength > 0) {
+        const dx = mousePosRef.current.x - o.position.x;
+        const dy = mousePosRef.current.y - o.position.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        // Répulsion légère quand très proche (effet tourbillon)
+        const force =
+          dist < 0.4
+            ? -strength * 0.008
+            : (strength * 0.012) / (dist * 0.4 + 0.5);
+
+        o.position.x += dx * force;
+        o.position.y += dy * force;
+      }
 
       // Reset bubble position if it moves off the top of the screen
       if (o.position.y > 4 && repeat) {

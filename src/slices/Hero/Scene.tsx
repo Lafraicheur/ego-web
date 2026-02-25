@@ -26,7 +26,7 @@ export default function Scene() {
     isReady();
 
     // Position de départ : sous le titre e-Go
-    gsap.set(groupRef.current.position, { y: 0.4 });
+    gsap.set(groupRef.current.position, { y: isDesktop ? 0.2 : 0.2 });
 
     // Animation d'intro
     if (window.scrollY < 20) {
@@ -64,7 +64,7 @@ export default function Scene() {
 
   return (
     <group ref={groupRef}>
-      <FloatingCar ref={carRef} scale={isDesktop ? 0.1 : 0.06} />
+      <FloatingCar ref={carRef} scale={isDesktop ? 1.5 : 0.9} />
       <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
     </group>
   );
