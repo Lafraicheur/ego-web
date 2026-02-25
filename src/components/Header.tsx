@@ -13,7 +13,7 @@ export default function Header() {
           <EGoLogo className="z-10" />
 
           {/* Hamburger (mobile uniquement) */}
-          <button
+          {/* <button
             className="z-[60] flex flex-col gap-1.5 md:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
@@ -21,7 +21,7 @@ export default function Header() {
             <span className={`block h-0.5 w-6 transition-all duration-300 ${open ? "translate-y-2 rotate-45 bg-white" : "bg-gray-900"}`} />
             <span className={`block h-0.5 w-6 transition-all duration-300 ${open ? "opacity-0" : "bg-gray-900"}`} />
             <span className={`block h-0.5 w-6 transition-all duration-300 ${open ? "-translate-y-2 -rotate-45 bg-white" : "bg-gray-900"}`} />
-          </button>
+          </button> */}
         </div>
       </header>
 

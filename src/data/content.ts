@@ -2,7 +2,7 @@ export const content = {
   hero: {
     heading: "e-Go",
     subheading: "Conducteurs & Clients, connectés.",
-    body: "Deux applications, une seule plateforme. e-Go Taxi pour les conducteurs, e-Go Client pour les passagers.",
+    body: "Deux applications, une seule plateforme. e-Go Taxi : Pour conducteur pour les conducteurs, e-Go : Trouvez un Taxi pour les passagers.",
     buttonText: "Télécharger",
     buttonLink: "#download",
     secondHeading: "e-Go révolutionne le transport à Abidjan",
@@ -13,32 +13,32 @@ export const content = {
   features: {
     items: [
       {
-        tag: "e-Go Taxi",
+        tag: "e-Go Taxi : Pour conducteur",
         heading: "Clients à proximité",
         body: "Visualisez les clients qui cherchent un taxi autour de vous et acceptez les courses en quelques secondes.",
       },
       {
-        tag: "e-Go Client",
+        tag: "e-Go : Trouvez un Taxi",
         heading: "Taxis disponibles",
         body: "Voyez en temps réel les conducteurs autour de vous. Trouvez votre taxi sans attendre ni appeler.",
       },
       {
-        tag: "e-Go Taxi",
+        tag: "e-Go Taxi : Pour conducteur",
         heading: "Prix face à face",
         body: "Négociez directement le tarif avec votre client via l'app. Accord mutuel, zéro litige.",
       },
       {
-        tag: "e-Go Client",
+        tag: "e-Go : Trouvez un Taxi",
         heading: "Partagez votre course",
         body: "Envoyez votre trajet en temps réel à un proche. Voyagez sereinement, quelqu'un sait où vous êtes.",
       },
       {
-        tag: "e-Go Taxi",
+        tag: "e-Go Taxi : Pour conducteur",
         heading: "Tableau de bord",
-        body: "Consultez l'historique complet de vos courses : distances, revenus et trajets de la journée.",
+        body: "Consultez l'historique complet de vos courses : revenus et trajets de la journée.",
       },
       {
-        tag: "e-Go Client",
+        tag: "e-Go : Trouvez un Taxi",
         heading: "Historique des trajets",
         body: "Retrouvez toutes vos courses passées. Revoyez vos itinéraires et suivez vos dépenses facilement.",
       },
@@ -50,7 +50,7 @@ export const content = {
       {
         number: "01",
         title: "Choisissez votre app",
-        body: "Téléchargez e-Go Taxi si vous êtes conducteur, ou e-Go Client si vous cherchez un taxi.",
+        body: "Téléchargez e-Go Taxi : Pour conducteur si vous êtes conducteur, ou e-Go : Trouvez un Taxi si vous cherchez un taxi.",
       },
       {
         number: "02",
@@ -78,6 +78,6 @@ export const content = {
   metadata: {
     title: "e-Go — Taxi Intelligent à Abidjan",
     description:
-      "e-Go connecte conducteurs et clients à Abidjan. e-Go Taxi pour les conducteurs, e-Go Client pour les passagers.",
+      "e-Go connecte conducteurs et clients à Abidjan. e-Go Taxi : Pour conducteur pour les conducteurs, e-Go : Trouvez un Taxi pour les passagers.",
   },
 };

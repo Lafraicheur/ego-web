@@ -38,7 +38,7 @@ const Features = ({ items }: FeaturesProps): JSX.Element => {
                   <span
                     className={clsx(
                       "mb-3 inline-block rounded-full px-3 py-1 text-xs font-bold tracking-widest",
-                      item.tag === "e-Go Taxi"
+                      item.tag === "e-Go Taxi : Pour conducteur"
                         ? "bg-[#FF4C00] text-white"
                         : "bg-[#0F0F0F] text-white",
                     )}

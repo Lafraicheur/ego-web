@@ -78,11 +78,11 @@ export default function TaxiTransition() {
         className="absolute right-[30%] top-1/2 flex -translate-y-[60%] flex-col items-center gap-1 md:right-[18%]"
       >
         <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#00000000]">
-          e-Go Taxi
+          e-Go Taxi : Pour conducteur
         </span>
         <Image
           src="/taxi.png"
-          alt="e-Go Taxi"
+          alt="e-Go Taxi : Pour conducteur"
           width={176}
           height={88}
           className="w-32 md:w-44"

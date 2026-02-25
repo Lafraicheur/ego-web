@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clsx from "clsx";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -57,13 +58,13 @@ function StatusBar({ dark = false }: { dark?: boolean }) {
   );
 }
 
-// Feature 0 — Clients à proximité (e-Go Taxi)
+// Feature 0 — Clients à proximité (e-Go Taxi : Pour conducteur)
 function Screen0() {
   return (
     <div className="flex h-full flex-col bg-[#0F0F0F]">
       <StatusBar dark />
       <div className="flex items-center gap-2 bg-[#FF4C00] px-4 py-2">
-        <span className="text-xs font-bold text-white">e-Go Taxi</span>
+        <span className="text-xs font-bold text-white">e-Go Taxi : Pour conducteur</span>
         <span className="ml-auto text-[9px] text-white/60">Abidjan</span>
       </div>
       <div className="relative flex-1 bg-[#111]">
@@ -106,7 +107,7 @@ function Screen0() {
   );
 }
 
-// Feature 1 — Taxis disponibles (e-Go Client)
+// Feature 1 — Taxis disponibles (e-Go : Trouvez un Taxi)
 function Screen1() {
   return (
     <div className="flex h-full flex-col bg-[#0F0F0F]">
@@ -153,7 +154,7 @@ function Screen1() {
   );
 }
 
-// Feature 2 — Prix face à face (e-Go Taxi)
+// Feature 2 — Prix face à face (e-Go Taxi : Pour conducteur)
 function Screen2() {
   return (
     <div className="flex h-full flex-col bg-white">
@@ -201,7 +202,7 @@ function Screen2() {
   );
 }
 
-// Feature 3 — Partagez votre course (e-Go Client)
+// Feature 3 — Partagez votre course (e-Go : Trouvez un Taxi)
 function Screen3() {
   return (
     <div className="flex h-full flex-col bg-[#0F0F0F]">
@@ -259,7 +260,7 @@ function Screen3() {
   );
 }
 
-// Feature 4 — Tableau de bord (e-Go Taxi)
+// Feature 4 — Tableau de bord (e-Go Taxi : Pour conducteur)
 function Screen4() {
   const bars = [60, 40, 80, 55, 70, 45, 90];
   return (
@@ -306,7 +307,7 @@ function Screen4() {
   );
 }
 
-// Feature 5 — Historique des trajets (e-Go Client)
+// Feature 5 — Historique des trajets (e-Go : Trouvez un Taxi)
 function Screen5() {
   const trips = [
     { from: "Cocody", to: "Plateau", price: "1 500", time: "08:30" },
@@ -463,25 +464,32 @@ export default function Features({ items }: FeaturesProps) {
           ))}
         </div>
 
-        {/* Téléphone — centré sur l'écran (légèrement à droite du centre) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-[58%]">
-          <div className="relative h-[300px] w-[150px] md:h-[600px] md:w-[300px]">
-            <div className="absolute inset-0 overflow-hidden rounded-[32px] border-[4px] border-[#1a1a1a] shadow-2xl md:rounded-[44px] md:border-[6px]">
-              {items.map((_, i) => {
-                const ScreenComponent = SCREENS[i];
-                return (
-                  <div
-                    key={i}
-                    ref={(el) => { screenRefs.current[i] = el; }}
-                    className="absolute inset-0 overflow-hidden"
-                  >
-                    <ScreenComponent />
-                  </div>
-                );
-              })}
-            </div>
-            {/* Reflet */}
-            <div className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-br from-white/10 to-transparent md:rounded-[44px]" />
+        {/* Téléphone — images switchables par feature */}
+        <div className="absolute left-1/2 top-[32%] -translate-x-1/2 -translate-y-1/2 md:left-[62%] md:top-1/2">
+          <div className="relative">
+            {items.map((_, i) => (
+              <div
+                key={i}
+                ref={(el) => { screenRefs.current[i] = el; }}
+                className="absolute top-0 left-0"
+              >
+                <Image
+                  src="/Trouver_un_taxi.png"
+                  alt="e-Go app"
+                  width={320}
+                  height={650}
+                  className="h-[260px] w-auto md:h-[750px]"
+                />
+              </div>
+            ))}
+            <Image
+              src="/Trouver_un_taxi.png"
+              alt=""
+              width={320}
+              height={650}
+              className="invisible h-[260px] w-auto md:h-[750px]"
+              aria-hidden
+            />
           </div>
         </div>
 
@@ -496,7 +504,7 @@ export default function Features({ items }: FeaturesProps) {
               <span
                 className={clsx(
                   "mb-4 inline-block w-fit rounded-full px-3 py-1 text-xs font-bold tracking-widest",
-                  item.tag === "e-Go Taxi"
+                  item.tag === "e-Go Taxi : Pour conducteur"
                     ? "bg-[#FF4C00] text-white"
                     : "bg-[#0F0F0F] text-white",
                 )}

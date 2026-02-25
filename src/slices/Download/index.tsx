@@ -68,12 +68,12 @@ const Download = ({ heading, body }: DownloadProps): JSX.Element => {
         {/* Deux cartes d'application */}
         <div className="mt-16 grid gap-6 md:grid-cols-2 md:gap-8">
 
-          {/* e-Go Client */}
+          {/* e-Go : Trouvez un Taxi */}
           <div className="dl-card rounded-3xl bg-black/20 p-8 text-left ring-2 ring-white/20 backdrop-blur-sm">
             <div className="mb-1 text-xs font-bold uppercase tracking-widest text-white/60">
               Pour les passagers
             </div>
-            <h3 className="mb-1 font-display text-3xl font-black">e-Go Client</h3>
+            <h3 className="mb-1 font-display text-3xl font-black">e-Go : Trouvez un Taxi</h3>
             <p className="mb-6 text-sm text-white/70">
               Trouvez un taxi, suivez votre trajet et partagez votre course avec vos proches.
             </p>
@@ -101,12 +101,12 @@ const Download = ({ heading, body }: DownloadProps): JSX.Element => {
             </div>
           </div>
 
-          {/* e-Go Taxi */}
+          {/* e-Go Taxi : Pour conducteur */}
           <div className="dl-card rounded-3xl bg-black/20 p-8 text-left ring-2 ring-white/20 backdrop-blur-sm">
             <div className="mb-1 text-xs font-bold uppercase tracking-widest text-white/60">
               Pour les conducteurs
             </div>
-            <h3 className="mb-1 font-display text-3xl font-black">e-Go Taxi</h3>
+            <h3 className="mb-1 font-display text-3xl font-black">e-Go Taxi : Pour conducteur</h3>
             <p className="mb-6 text-sm text-white/70">
               Trouvez des clients à proximité, fixez vos prix et gérez vos courses de la journée.
             </p>
