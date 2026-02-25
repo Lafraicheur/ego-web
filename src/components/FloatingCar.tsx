@@ -22,7 +22,7 @@ const FloatingCar = forwardRef<Group, FloatingCarProps>(
     },
     ref,
   ) => {
-    const { scene } = useGLTF("/taxi.glb");
+    const { scene } = useGLTF("/taxi/taxi.gltf");
 
     return (
       <group ref={ref}>
@@ -45,6 +45,6 @@ const FloatingCar = forwardRef<Group, FloatingCarProps>(
 
 FloatingCar.displayName = "FloatingCar";
 
-useGLTF.preload("/taxi.glb");
+useGLTF.preload("/taxi/taxi.gltf");
 
 export default FloatingCar;
