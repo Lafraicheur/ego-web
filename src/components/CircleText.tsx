@@ -36,12 +36,12 @@ export default function CircleText({
       >
         <text
           fill={textColor}
-          fontSize="8.5"
+          fontSize="7.5"
           fontWeight="bold"
-          letterSpacing="2"
+          letterSpacing="3"
         >
           <textPath href="#ego-circle-path">
-            {"Votre trajet \u2605 Votre prix \u2605 Votre confiance Avec e-Go \u2605"}
+            {"Votre trajet \u2605 Votre sécurité \u2605 Notre priorité\u2605"}
           </textPath>
         </text>
       </g>

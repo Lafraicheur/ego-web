@@ -1,4 +1,5 @@
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 
 import "./app.css";
 import Header from "@/components/Header";
@@ -33,6 +34,13 @@ export default function RootLayout({
           <ViewCanvas />
         </main>
         <Footer />
+        <Script id="axeptio-settings" strategy="beforeInteractive">
+          {`window.axeptioSettings = { clientId: "699f103bbd813aff599eab8f" };`}
+        </Script>
+        <Script
+          src="//static.axept.io/sdk.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
