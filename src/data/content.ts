@@ -76,8 +76,8 @@ export const content = {
   },
 
   metadata: {
-    title: "e-Go — Taxi Intelligent à Abidjan",
+    title: "e-Go",
     description:
-      "e-Go connecte conducteurs et clients à Abidjan. e-Go Taxi : Pour conducteur pour les conducteurs, e-Go : Trouvez un Taxi pour les passagers.",
+      "e-Go connecte conducteurs et clients à Abidjan. e-Go Taxi : Pour conducteur, e-Go : Trouvez un Taxi pour les passagers.",
   },
 };

@@ -1,6 +1,6 @@
 # e-Go — Landing Page
 
-Application de taxi intelligente à Abidjan. Plateforme mettant en relation conducteurs et clients.
+Application de taxi à Abidjan. Plateforme mettant en relation conducteurs et clients.
 
 ## Démarrer le projet
 

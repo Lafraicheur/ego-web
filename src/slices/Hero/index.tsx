@@ -7,7 +7,6 @@ import { View } from "@react-three/drei";
 
 import { Bounded } from "@/components/Bounded";
 import Button from "@/components/Button";
-import { TextSplitter } from "@/components/TextSplitter";
 import Scene from "./Scene";
 import { Bubbles } from "./Bubbles";
 import { useStore } from "@/hooks/useStore";
@@ -20,8 +19,6 @@ type HeroProps = {
   body: string;
   buttonLink: string;
   buttonText: string;
-  secondHeading: string;
-  secondBody: string;
 };
 
 const Hero = ({
@@ -30,8 +27,6 @@ const Hero = ({
   body,
   buttonLink,
   buttonText,
-  secondHeading,
-  secondBody,
 }: HeroProps): JSX.Element => {
   const ready = useStore((state) => state.ready);
 
@@ -58,11 +53,6 @@ const Hero = ({
         .from(".hero-body", { opacity: 0, y: 10 })
         .from(".hero-button", { opacity: 0, y: 10, duration: 0.6 });
 
-      // Gris dès le départ — avant tout scroll
-      gsap.set(".text-side-heading .split-word, .text-side-body .split-word", {
-        color: "#D4B0A0",
-      });
-
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: ".hero",
@@ -78,19 +68,7 @@ const Hero = ({
           { backgroundColor: "#FFFFFF" },
           { backgroundColor: "#FFF3EE", overwrite: "auto" },
           1,
-        )
-      gsap.to(".text-side-heading .split-word, .text-side-body .split-word", {
-        color: "#0F0F0F",
-        stagger: 0.6,
-        ease: "none",
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: ".text-side",
-          start: "top center",
-          end: "bottom top",
-          scrub: 3,
-        },
-      });
+        );
     },
     { dependencies: [ready] },
   );
@@ -116,17 +94,6 @@ const Hero = ({
               buttonText={buttonText}
               className="hero-button mt-12"
             />
-          </div>
-        </div>
-
-        <div className="text-side relative z-[80] flex h-screen items-center justify-center px-6 md:px-20">
-          <div className="w-full max-w-4xl">
-            <h2 className="text-side-heading font-display font-black uppercase leading-[1] text-gray-900" style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)" }}>
-              <TextSplitter text={secondHeading} />
-            </h2>
-            <div className="text-side-body mt-6 font-display font-black uppercase leading-[1.1] text-gray-900" style={{ fontSize: "clamp(1.5rem, 4vw, 3.5rem)" }}>
-              <TextSplitter text={secondBody} />
-            </div>
           </div>
         </div>
       </div>

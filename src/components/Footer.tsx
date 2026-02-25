@@ -9,7 +9,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center gap-1 md:items-start">
           <p className="text-center text-sm text-gray-500 md:text-left">
-            © {new Date().getFullYear()} e-Go — Application de taxi intelligente à Abidjan
+            © {new Date().getFullYear()} e-Go — Application de taxi à Abidjan
           </p>
           <p className="text-xs text-gray-600">
             Une solution <span className="font-semibold text-gray-400">e-SPHERE</span>
