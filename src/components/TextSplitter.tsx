@@ -4,22 +4,25 @@ type Props = {
   text: string;
   className?: string;
   wordDisplayStyle?: "inline-block" | "block";
+  preserveWords?: string[];
 };
 
 export function TextSplitter({
   text,
   className,
   wordDisplayStyle = "inline-block",
+  preserveWords = [],
 }: Props) {
   if (!text) return null;
 
   const words = text.split(" ");
 
   return words.map((word: string, wordIndex: number) => {
+    const isPreserved = preserveWords.includes(word);
     const splitText = word.split("");
     return (
       <span
-        className={clsx("split-word", className)}
+        className={clsx("split-word", className, isPreserved && "normal-case")}
         style={{ display: wordDisplayStyle, whiteSpace: "pre" }}
         key={`${wordIndex}-${word}`}
       >

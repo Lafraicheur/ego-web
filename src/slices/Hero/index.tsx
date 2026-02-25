@@ -16,7 +16,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 type HeroProps = {
   heading: string;
   subheading: string;
-  body: string;
+  body: string[];
   buttonLink: string;
   buttonText: string;
 };
@@ -86,9 +86,14 @@ const Hero = ({
             <div className="hero-subheading mt-8 text-2xl font-semibold text-gray-900 md:text-4xl lg:text-6xl">
               <p>{subheading}</p>
             </div>
-            <div className="hero-body mt-4 text-base font-normal text-gray-600 md:text-2xl">
-              <p>{body}</p>
-            </div>
+            <ul className="hero-body mt-4 space-y-1 text-base font-normal text-gray-600 md:text-2xl">
+              {body.map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span>•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
             <Button
               buttonLink={buttonLink}
               buttonText={buttonText}

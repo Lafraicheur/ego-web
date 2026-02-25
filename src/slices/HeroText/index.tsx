@@ -41,13 +41,13 @@ const HeroText = ({ heading, body }: HeroTextProps): JSX.Element => {
             className="hero-text-heading font-display font-black uppercase leading-[1] text-gray-900"
             style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)" }}
           >
-            <TextSplitter text={heading} />
+            <TextSplitter text={heading} preserveWords={["e-Go"]} />
           </h2>
           <div
             className="hero-text-body mt-6 font-display font-black uppercase leading-[1.1] text-gray-900"
             style={{ fontSize: "clamp(1.5rem, 4vw, 3.5rem)" }}
           >
-            <TextSplitter text={body} />
+            <TextSplitter text={body} preserveWords={["e-Go"]} />
           </div>
         </div>
       </div>

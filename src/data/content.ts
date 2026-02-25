@@ -2,12 +2,12 @@ export const content = {
   hero: {
     heading: "e-Go",
     subheading: "Conducteurs & Clients, connectés.",
-    body: "Deux applications, une seule plateforme. e-Go Taxi : Pour conducteur, e-Go : Trouvez un Taxi pour les passagers.",
+    body: ["e-Go", "e-Go Taxi"],
     buttonText: "Télécharger",
     buttonLink: "#download",
     secondHeading: "e-Go révolutionne le transport à Abidjan",
     secondBody:
-      "AVEC une application pensée POUR ceux qui conduisent et ceux qui voyagent.",
+      "Une application pensée et conçue pour ceux qui conduisent les taxis compteurs et ceux qui les utilisent.",
   },
 
   features: {
