@@ -505,7 +505,7 @@ export default function Features({ items }: FeaturesProps) {
               </span>
             )}
             <h2
-              className="font-black uppercase leading-[0.88] text-gray-900"
+              className="font-display font-black uppercase leading-[0.88] text-gray-900"
               style={{ fontSize: "clamp(2.8rem, 7.5vw, 6rem)" }}
             >
               {item.heading}

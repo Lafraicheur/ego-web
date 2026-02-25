@@ -52,7 +52,7 @@ const Download = ({ heading, body }: DownloadProps): JSX.Element => {
       className="download-section bg-[#FF4C00] py-36 text-white"
     >
       <div className="w-full text-center">
-        <h2 className="dl-heading text-balance text-5xl font-black uppercase md:text-7xl lg:text-8xl">
+        <h2 className="dl-heading font-display text-balance text-5xl font-black uppercase md:text-7xl lg:text-8xl">
           {heading.split("e-Go").map((part, i, arr) => (
             <span key={i}>
               {part}
@@ -73,7 +73,7 @@ const Download = ({ heading, body }: DownloadProps): JSX.Element => {
             <div className="mb-1 text-xs font-bold uppercase tracking-widest text-white/60">
               Pour les passagers
             </div>
-            <h3 className="mb-1 text-3xl font-black">e-Go Client</h3>
+            <h3 className="mb-1 font-display text-3xl font-black">e-Go Client</h3>
             <p className="mb-6 text-sm text-white/70">
               Trouvez un taxi, suivez votre trajet et partagez votre course avec vos proches.
             </p>
@@ -106,7 +106,7 @@ const Download = ({ heading, body }: DownloadProps): JSX.Element => {
             <div className="mb-1 text-xs font-bold uppercase tracking-widest text-white/60">
               Pour les conducteurs
             </div>
-            <h3 className="mb-1 text-3xl font-black">e-Go Taxi</h3>
+            <h3 className="mb-1 font-display text-3xl font-black">e-Go Taxi</h3>
             <p className="mb-6 text-sm text-white/70">
               Trouvez des clients à proximité, fixez vos prix et gérez vos courses de la journée.
             </p>

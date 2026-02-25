@@ -5,9 +5,9 @@ export const content = {
     body: "Deux applications, une seule plateforme. e-Go Taxi pour les conducteurs, e-Go Client pour les passagers.",
     buttonText: "Télécharger",
     buttonLink: "#download",
-    secondHeading: "Plus besoin d'intermédiaire",
+    secondHeading: "e-Go révolutionne le transport à Abidjan",
     secondBody:
-      "e-Go met conducteurs et clients en relation directe. Le prix se fixe face à face, en toute transparence.",
+      "AVEC une application pensée POUR ceux qui conduisent et ceux qui voyagent.",
   },
 
   features: {

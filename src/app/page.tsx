@@ -26,7 +26,7 @@ export default function Index() {
         secondBody={content.hero.secondBody}
       />
       <TaxiTransition />
-      <Features items={content.features.items} />
+      {/* <Features items={content.features.items} /> */}
       <BigText />
       <HowItWorks steps={content.howItWorks.steps} />
       <Download

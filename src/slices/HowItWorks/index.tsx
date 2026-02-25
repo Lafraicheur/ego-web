@@ -63,7 +63,7 @@ const HowItWorks = ({ steps }: HowItWorksProps): JSX.Element => {
       className="how-section bg-[#0F0F0F] py-28 text-white"
     >
       <div className="w-full max-w-5xl">
-        <h2 className="how-heading mb-20 text-center text-5xl font-black uppercase text-[#FF4C00] md:text-7xl">
+        <h2 className="how-heading mb-20 text-center text-5xl font-display font-black uppercase text-[#FF4C00] md:text-7xl">
           Comment ça marche ?
         </h2>
 
@@ -80,7 +80,7 @@ const HowItWorks = ({ steps }: HowItWorksProps): JSX.Element => {
 
               {/* Content */}
               <div className="mt-4">
-                <h3 className="text-2xl font-black uppercase text-white">
+                <h3 className="font-display text-2xl font-black uppercase text-white">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-lg leading-relaxed text-gray-400">

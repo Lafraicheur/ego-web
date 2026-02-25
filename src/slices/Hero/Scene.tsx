@@ -26,7 +26,7 @@ export default function Scene() {
     isReady();
 
     // Position de départ : sous le titre e-Go
-    gsap.set(groupRef.current.position, { y: isDesktop ? 0.2 : 0.2 });
+    gsap.set(groupRef.current.position, { y: isDesktop ? 0.2 : 0.3 });
 
     // Animation d'intro
     if (window.scrollY < 20) {
